@@ -1,4 +1,3 @@
-import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class InfToPref {
@@ -58,28 +57,12 @@ public class InfToPref {
 		return false;
 	}
 
-	private boolean isOperator(String string) {
-		return OPERATORS.contains(string);
-	}
-
 	private boolean isOpenBracket(String string) {
 		return OPEN_BRACKET.equals(string);
 	}
 
 	private boolean isCloseBracket(String string) {
 		return CLOSE_BRACKET.equals(string);
-	}
-
-	private int getPriority(String string) {
-		if (string.equals("+") || string.equals("-")) {
-			return 0;
-		} else if (string.equals("*") || string.equals("/")) {
-			return 1;
-		} else if (string.equals("^")) {
-			return 2;
-		}
-
-		return -1;
 	}
 
 	private void deleteSpaces() {
